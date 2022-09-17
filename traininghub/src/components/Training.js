@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 // const Training = ({ number, trainings }) => {
 const Training = () => {
@@ -7,7 +8,7 @@ const Training = () => {
     useEffect(() => {
 
         console.log('Training UseState')
-        fetch('http://localhost:8000/api/training/')
+        fetch('http://localhost:8000/training/')
             .then(res => res.json())
             .then(res => {
                 setState(res)
@@ -23,9 +24,9 @@ const Training = () => {
             <div className='title'>{state[0]?.title}</div>
             <div className='description'>{state[0]?.description}</div>
             <div className='category'>{state[0]?.category}</div>
-            <div className='training_link'>{state[0]?.training_link}</div>
+            <a href={state[0]?.training_link}>Link</a>
 
-        </div>
+        </div >
     )
 }
 

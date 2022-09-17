@@ -6,31 +6,28 @@ const Modules = (props) => {
 
 
     return (
-        <div>
-            <main>
-                <div>
-                    <h3>Training Modules</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Link</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {props.trainings?.map((record, id) => {
-                                // return <Training record={record} key={id} />
-                                <Link to={`/training/details/${record.title}`}>
-                                    <Training title={record.title} />
-                                </Link>
-                            })}
-                        </tbody>
-                    </table>
-                </div>
-            </main>
+        <main>
+            <div>
+                <h3>Training Modules</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {props.trainings?.map((record, id) => {
+                            return <Training record={record} key={id} />
 
-        </div>
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+
     )
 }
 
