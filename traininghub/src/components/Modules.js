@@ -4,28 +4,32 @@ import { Link } from 'react-router-dom'
 
 const Modules = (props) => {
 
-
     return (
-        <main>
-            <div>
-                <h3>Training Modules</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {props.trainings?.map((record, id) => {
-                            return <Training record={record} key={id} />
+        <div>
+            <h1>Trainings</h1>
+            {props.trainings.map(t => {
+                return <Training title={t.title} details={t.details} />
+            })}
+        </div>
+        // <main>
+        //     <div>
+        //         <h3>Training Modules</h3>
+        //         <table>
+        //             <thead>
+        //                 <tr>
+        //                     <th>Title</th>
+        //                     <th>Details</th>
+        //                 </tr>
+        //             </thead>
+        //             <tbody>
+        //                 {props.trainings?.map(() => {
+        //                     return <Training />
 
-                        })}
-                    </tbody>
-                </table>
-            </div>
-        </main>
+        //                 })}
+        //             </tbody>
+        //         </table>
+        //     </div>
+        // </main>
 
 
     )

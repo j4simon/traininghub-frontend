@@ -1,9 +1,11 @@
 import './App.css';
+
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Routes, Route } from 'react-router-dom'
 import Modules from './components/Modules'
 import TrainingForm from './components/TrainingForm'
+import Training from './components/Training'
 import Layout from './components/Layout'
 import Footer from './components/Footer'
 import Home from './pages/Home';
@@ -22,21 +24,24 @@ function App() {
       }).then(res => console.log(res))
   }, [])
 
-  const updateTrainingState = (id) => {
-    setState(state.filter(training => training._id !== id))
-  }
+  // const updateTrainingState = (id) => {
+  //   setState(state.filter(training => training._id !== id))
+  // }
 
   return (
-    <Layout user={user} setUser={setUser}>
-      <Routes>
-        <Route path='/' element={<Home training={state} updateTrainingState={updateTrainingState} user={user} />} />
-        {/* <h1>Hello, React!</h1>
+    <div>
+      {/* // <Layout user={user} setUser={setUser}> */}
+      {/* <Routes>
+        <Route path='/' element={<Home training={state} updateTrainingState={updateTrainingState} user={user} />} /> */}
+      <h1>Punny Name TBD</h1>
 
-          <Modules trainings={state} />
-          <TrainingForm />
-          <Footer /> */}
-      </Routes>
-    </Layout>
+      <Modules trainings={state} />
+      {/* <TrainingForm trainings={state} /> */}
+      {/* <Training {} /> */}
+      <Footer />
+      {/* </Routes> */}
+      {/* // </Layout> */}
+    </div>
   );
 }
 

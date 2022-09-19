@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 
 const TrainingForm = () => {
-    const [module, setModule] = useState({
+    const [state, setState] = useState({
         title: "",
         details: ""
     })
+    // const [state, setState] = useState([])
 
     const handleChange = (e) => {
-        setModule({
-            ...module, [e.target.name]: e.target.value
+        setState({
+            ...state, [e.target.name]: e.target.value
         })
     }
     const handleSubmit = async (e) => {
@@ -19,6 +20,7 @@ const TrainingForm = () => {
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
+
                 },
                 body: JSON.stringify(module)
             })
@@ -26,6 +28,10 @@ const TrainingForm = () => {
             console.log(error.message)
         }
     }
+
+    // let deleteTraining = (req, res) => {
+
+    // }
 
     return (
         <div>
@@ -47,8 +53,7 @@ const TrainingForm = () => {
                     onChange={handleChange}
                 />
 
-
-                <button id="new" type="submit" className="signupbutton">Add Training </button>
+                <button type="submit" className="formControl">Add Training </button>
 
             </form>
 
