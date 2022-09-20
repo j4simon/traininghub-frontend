@@ -9,6 +9,7 @@ import Training from './components/Training'
 import Layout from './components/Layout'
 import Footer from './components/Footer'
 import Home from './pages/Home';
+import TrainingDetails from './pages/Details';
 
 function App() {
   const [state, setState] = useState([])
@@ -34,10 +35,14 @@ function App() {
       {/* <Routes>
         <Route path='/' element={<Home training={state} updateTrainingState={updateTrainingState} user={user} />} /> */}
       <h1>Punny Name TBD</h1>
-
-      <Modules trainings={state} />
+      <br />
+      <Routes>
+        <Route path='/training' element={<Modules trainings={state} />} />
+        <Route path='/training/:id' element={<TrainingDetails />} />
+      </Routes>
+      {/* <Modules trainings={state} /> */}
       {/* <TrainingForm trainings={state} /> */}
-      {/* <Training {} /> */}
+      {/* <Training trainings={state} /> */}
       <Footer />
       {/* </Routes> */}
       {/* // </Layout> */}

@@ -4,12 +4,17 @@ import { Link } from 'react-router-dom'
 
 const Modules = (props) => {
 
+
     return (
         <div>
             <h1>Trainings</h1>
             {props.trainings.map(t => {
-                return <Training title={t.title} details={t.details} />
+                return <Training title={t.title} details={t.details} key={t.id} id={t.id} />
+
+
+
             })}
+
         </div>
         // <main>
         //     <div>

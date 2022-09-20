@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import Training from '../components/Training'
+import Modules from '../components/Modules'
 
-const Home = ({ training, updateTrainingState, user }) => {
+const Home = ({ training }) => {
     return (
         <div>
-            <Training training={training} updateTrainingState={updateTrainingState} user={user} />
+            <Modules training={training} />
         </div>
     )
 }
