@@ -39,6 +39,7 @@ function App() {
       <Routes>
         <Route path='/training' element={<Modules trainings={state} />} />
         <Route path='/training/:id' element={<TrainingDetails />} />
+        <Route path='/training/new' element={<TrainingForm />} />
       </Routes>
       {/* <Modules trainings={state} /> */}
       {/* <TrainingForm trainings={state} /> */}

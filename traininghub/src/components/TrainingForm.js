@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
+import { redirect, useNavigate } from 'react-router-dom'
 
 const TrainingForm = () => {
     const [state, setState] = useState({
         title: "",
-        details: ""
+        details: "",
+
     })
+
+    const navigate = useNavigate()
     // const [state, setState] = useState([])
 
     const handleChange = (e) => {
+        console.log("Target is " + e.target.name)
         setState({
             ...state, [e.target.name]: e.target.value
         })
@@ -15,18 +20,19 @@ const TrainingForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            let res = await fetch("http://localhost:8000/training/", {
+            await fetch("http://localhost:8000/training/", {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
 
                 },
-                body: JSON.stringify(module)
+                body: JSON.stringify(state)
             })
         } catch (error) {
             console.log(error.message)
         }
+        navigate('/training')
     }
 
     // let deleteTraining = (req, res) => {
