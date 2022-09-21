@@ -10,10 +10,11 @@ import Layout from './components/Layout'
 import Footer from './components/Footer'
 import Home from './pages/Home';
 import TrainingDetails from './pages/Details';
+import Navbar from './components/Navbar';
 
 function App() {
   const [state, setState] = useState([])
-  const [user, setUser] = useState()
+  // const [user, setUser] = useState()
   useEffect(() => {
 
     console.log('useEffect Ran!')
@@ -34,8 +35,8 @@ function App() {
       {/* // <Layout user={user} setUser={setUser}> */}
       {/* <Routes>
         <Route path='/' element={<Home training={state} updateTrainingState={updateTrainingState} user={user} />} /> */}
-      <h1>Punny Name TBD</h1>
-      <br />
+      {/* <h1>Punny Name TBD</h1> */}
+      <Navbar />
       <Routes>
         <Route path='/training' element={<Modules trainings={state} />} />
         <Route path='/training/:id' element={<TrainingDetails />} />

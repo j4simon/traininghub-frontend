@@ -12,7 +12,7 @@ const Training = (props) => {
         <div className="Training" key="id">
             <br />
             <h2>{props?.title}</h2>
-            <h3>- {props?.details}</h3>
+            {/* <h3>- {props?.details}</h3> */}
             <Link to={`/training/${props?.id}`}>Details</Link>
 
 
