@@ -1,13 +1,27 @@
 import React from 'react'
 import Training from './Training'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
-const Modules = (props) => {
+const TrainingsContainer = styled.div`
+
+    h2 {
+        padding: 20px;
+        background-color: #da8ee7;
+        margin: 0 auto;
+        text-align: center;
+        color: purple;
+        border: 0;
+    }
+
+`
+
+const Trainings = (props) => {
 
 
     return (
-        <div>
-            <h1>Trainings</h1>
+        <TrainingsContainer>
+            <h2>Training Modules</h2>
             {props.trainings.map(t => {
                 return <Training title={t.title} details={t.details} key={t.id} id={t.id} />
 
@@ -15,7 +29,7 @@ const Modules = (props) => {
 
             })}
 
-        </div>
+        </TrainingsContainer>
         // <main>
         //     <div>
         //         <h3>Training Modules</h3>
@@ -40,4 +54,4 @@ const Modules = (props) => {
     )
 }
 
-export default Modules
+export default Trainings

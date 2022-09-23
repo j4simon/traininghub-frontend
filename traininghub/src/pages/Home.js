@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import Modules from '../components/Modules'
+import Trainings from '../components/Trainings'
 
-const Home = ({ training }) => {
+const HomeContainer = styled.div`
+    padding: 20px;
+
+`
+
+const Home = () => {
+    const [state, setState] = useState({
+        title: "",
+        details: ""
+
+    })
+
     return (
-        <div>
-            <Modules training={training} />
-        </div>
+        <HomeContainer>
+            <h2>Training Modules</h2>
+            <Trainings trainings={state} />
+        </HomeContainer>
     )
 }
 

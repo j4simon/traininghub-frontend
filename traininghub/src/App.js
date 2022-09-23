@@ -3,16 +3,18 @@ import './App.css';
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Routes, Route } from 'react-router-dom'
-import Modules from './components/Modules'
+import Trainings from './components/Trainings'
 import TrainingForm from './components/TrainingForm'
 import Training from './components/Training'
 import Layout from './components/Layout'
 import Footer from './components/Footer'
 import Home from './pages/Home';
-import TrainingDetails from './pages/Details';
-import Navbar from './components/Navbar';
+import TrainingDetails from './pages/Details'
+import Navbar from './components/Navbar'
 
 function App() {
+
+
   const [state, setState] = useState([])
   // const [user, setUser] = useState()
   useEffect(() => {
@@ -38,7 +40,7 @@ function App() {
       {/* <h1>Punny Name TBD</h1> */}
       <Navbar />
       <Routes>
-        <Route path='/training' element={<Modules trainings={state} />} />
+        <Route forceRefresh={true} path='/training' element={<Trainings trainings={state} />} />
         <Route path='/training/:id' element={<TrainingDetails />} />
         <Route path='/training/new' element={<TrainingForm />} />
       </Routes>

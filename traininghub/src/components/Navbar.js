@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 const NavbarContainer = styled.div`
     background-color: purple;
     padding: 20px;
-    display: flex;
 
     h2 {
+        margin-left: 34%;
         color: #02840f;
         font-weight: bold;
         text-shadow: 2px 2px black;
@@ -15,8 +15,12 @@ const NavbarContainer = styled.div`
     }
 
     ul {
-        display: flex;
+        font-size: 33%;
+        display: flexbox;
         justify-content: space-evenly; 
+        text-align: center;
+        margin-left: 33%;
+
     }
 
 
@@ -24,18 +28,22 @@ const NavbarContainer = styled.div`
         list-style: none;
         padding-right: 10px;
         font-size: 20px;
-        font-family: "Helvetica Neue",Helvetica
+        align-content: center;
+
     }
 
-    a:link {
+    a {
+        display: inline-block;
         padding: 3px;
         text-decoration: none;
         outline: 1px solid;
         background: lightgray;
         color: #aa104f;
+        border-radius: 5px;
+        align-content: bottom;
     }
 
-    a:visited {
+    /* a:visited {
         text-decoration: none;
         color: #aa104f;
 
@@ -44,12 +52,16 @@ const NavbarContainer = styled.div`
     a:hover {
         text-decoration: none;
         color: #aa104f;
+        border-radius: 5px;
+
     }
 
     a:active {
         text-decoration: none;
         color: #aa104f;
-    }
+        border-radius: 5px;
+
+    } */
 
 `
 

@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
-import { redirect, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import style from 'styled-components'
+
+const FormContainer = style.form`
+
+`
 
 const TrainingForm = () => {
     const [state, setState] = useState({
         title: "",
-        details: "",
+        details: ""
 
     })
 
@@ -40,7 +45,7 @@ const TrainingForm = () => {
     // }
 
     return (
-        <div>
+        <FormContainer>
             <form onSubmit={handleSubmit} encType="multipart/form-data" className="lbox">
                 <input
                     id="status_body"
@@ -50,6 +55,7 @@ const TrainingForm = () => {
                     placeholder="Title"
                     onChange={handleChange}
                 />
+
                 <input
                     className="linput"
                     id="details"
@@ -63,7 +69,7 @@ const TrainingForm = () => {
 
             </form>
 
-        </div>
+        </FormContainer>
     )
 }
 

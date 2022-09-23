@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
 
+
+const DetailsComponent = styled.div`
+    margin: 15px;
+    background-color: lightpink;
+
+`
 
 
 const TrainingDetails = ({ props }) => {
@@ -46,39 +53,56 @@ const TrainingDetails = ({ props }) => {
         }
         navigate('/training')
     }
+    const trainingDelete = async (e) => {
+        e.preventDefault()
+        try {
+            await fetch(`http://localhost:8000/training/${id}/`, {
+                method: "DELETE",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
 
+                },
+                body: JSON.stringify(training)
+            })
+        } catch (error) {
+            console.log(error.message)
+        }
+        navigate('/training')
+    }
 
     return (
+        <DetailsComponent>
 
-        <form onSubmit={handleSubmit} encType="multipart/form-data" className="lbox">
-            <input
-                id="status_body"
-                name="title"
-                type="text"
-                className="linput"
-                value={training.title}
-                onChange={handleChange}
-            />
-            <input
-                className="linput"
-                id="details"
-                name="details"
-                type="text"
-                value={training.details}
-                onChange={handleChange}
-            />
+            <form onSubmit={handleSubmit} encType="multipart/form-data" className="lbox">
+                <input
+                    id="status_body"
+                    name="title"
+                    type="text"
+                    className="linput"
+                    value={training.title}
+                    onChange={handleChange}
+                />
+                <input
+                    className="linput"
+                    id="details"
+                    name="details"
+                    type="text"
+                    value={training.details}
+                    onChange={handleChange}
+                />
 
-            <button type="submit" className="formControl">Edit Training</button>
+                <button type="submit" className="formControl">Edit Training</button>
+                <button onClick={trainingDelete}>Delete</button>
+            </form>
 
-        </form>
-
-        // <div className="details-container">
-        //     <div className="details">
-        //         <h2>{training.title}</h2>
-        //         <h3>{training.details}</h3>
-        //     </div>
-
-        // </div>
+            {/* <div className="details-container">
+                <div className="details">
+                    <h2>{training.title}</h2>
+                    <h3>{training.details}</h3>
+                </div>
+            </div> */}
+        </DetailsComponent>
     )
 }
 

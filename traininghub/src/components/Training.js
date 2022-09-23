@@ -1,23 +1,44 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
-// const Training = ({ number, trainings }) => {
+const TrainingContainer = styled.div`
+    display: flex;
+    border-bottom: 1px solid lightgrey;
+
+
+    h3 {
+        padding-right: 5px;
+        padding-top: 5px;
+    }
+
+    a {
+        padding-left: 4px;
+        padding-right: 4px;
+        text-decoration: none;
+        outline: 1px solid;
+        color: #aa104f;
+        border-radius: 5px;
+        align-self: center;
+    }
+
+`
+
 const Training = (props) => {
-    const [state, setState] = useState([])
+    // const [state, setState] = useState([])
 
 
     return (
 
 
-        <div className="Training" key="id">
+        <TrainingContainer className="Training" key="id">
             <br />
-            <h2>{props?.title}</h2>
+            <h3>{props?.title} - </h3>
             {/* <h3>- {props?.details}</h3> */}
-            <Link to={`/training/${props?.id}`}>Details</Link>
+            <Link to={`/training/${props?.id}`}>See Details</Link>
 
 
-
-        </div >
+        </TrainingContainer >
     )
 }
 
